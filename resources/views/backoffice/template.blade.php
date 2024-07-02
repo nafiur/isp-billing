@@ -634,7 +634,7 @@
     <script src="{{ asset('backoffice/assets/plugins/apexchart/apexcharts.min.js') }}" type="text/javascript"></script>
     <script src="{{ asset('backoffice/assets/plugins/apexchart/chart-data.js') }}" type="text/javascript"></script>
 
-    <script src="{{ asset('backoffice/assets/js/theme-settings.js') }}" type="text/javascript"></script>
+    {{-- <script src="{{ asset('backoffice/assets/js/theme-settings.js') }}" type="text/javascript"></script> --}}
     <script src="{{ asset('backoffice/assets/js/greedynav.js') }}" type="text/javascript"></script>
 
     <script src="{{ asset('backoffice/assets/js/script.js') }}" type="text/javascript"></script>
