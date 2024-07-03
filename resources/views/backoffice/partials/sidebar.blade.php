@@ -16,13 +16,13 @@
                     <li><a class="active" href="{{ route('dashboard') }}">Admin Dashboard</a></li>
         </ul>
         </li> --}}
-        <li class="submenu">
-            <a href="#"><i class="fe fe-grid"></i> <span> Applications</span> <span class="menu-arrow"></span></a>
-            <ul style="display: none;">
-                <li><a href="chat.html">Chat</a></li>
-                <li><a href="calendar.html">Calendar</a></li>
-                <li><a href="inbox.html">Email</a></li>
-            </ul>
+
+        <li class="menu-title"><span>Package</span></li>
+        <li class="{{ request()->routeIs('package.index') ? 'active' : '' }}">
+            <a href="{{ route('package.index') }}">
+                <i class="fe fe-home"></i>
+                <span> Package</span>
+            </a>
         </li>
         <li class="menu-title"><span>Router Settings</span></li>
         <li class="submenu">

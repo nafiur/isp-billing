@@ -7,7 +7,7 @@
     <meta name="keywords" content="admin, estimates, bootstrap, business, corporate, creative, management, minimal, modern, accounts, invoice, html5, responsive, CRM, Projects">
     <meta name="author" content="Nafiur Rahman">
 
-    <title>ISP Billing - Bootstrap Admin HTML Template</title>
+    <title>@yield('title'){{ '| ISP Billing' }}</title>
 
     <link rel="shortcut icon" href="{{ asset('backoffice/assets/img/favicon.png') }}">
 
@@ -586,6 +586,8 @@
     <link rel="stylesheet" href="{{ asset('backoffice/assets/plugins/fontawesome/css/fontawesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('backoffice/assets/plugins/fontawesome/css/all.min.css') }}">
 
+    <link rel="stylesheet" href="{{ asset('backoffice/assets/plugins/select2/css/select2.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('backoffice/assets/plugins/intlTelInput/css/intlTelInput.css') }}">
     <link rel="stylesheet" href="{{ asset('backoffice/assets/plugins/feather/feather.css') }}">
 
     <link rel="stylesheet" href="{{ asset('backoffice/assets/css/bootstrap-datetimepicker.min.css') }}">
@@ -626,7 +628,8 @@
     <script src="{{ asset('backoffice/assets/js/jquery-3.7.1.min.js') }}" type="text/javascript"></script>
 
     <script src="{{ asset('backoffice/assets/js/bootstrap.bundle.min.js') }}" type="text/javascript"></script>
-
+    <script src="{{ asset('backoffice/assets/plugins/select2/js/select2.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('backoffice/assets/plugins/intlTelInput/js/intlTelInput-jquery.min.js') }}" type="text/javascript"></script>
     <script src="{{ asset('backoffice/assets/js/feather.min.js') }}" type="text/javascript"></script>
 
     <script src="{{ asset('backoffice/assets/plugins/slimscroll/jquery.slimscroll.min.js') }}" type="text/javascript"></script>
