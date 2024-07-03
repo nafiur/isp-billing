@@ -1,7 +1,7 @@
 @extends('backoffice.template')
 @section('content')
 @section('title')
-{{ 'Co-Ordinator Monitoring Tools (ID Card Management)' }}
+{{ 'Dashboard' }}
 @endsection
 <div class="page-wrapper">
     <div class="content container-fluid">

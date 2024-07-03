@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RouterController;
 use App\Http\Controllers\PackageController;
 use App\Http\Controllers\ProfileController;
 
@@ -23,6 +24,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/package/store', [PackageController::class, 'store'])->name('package.store');
 
     Route::get('/router', [RouterController::class, 'index'])->name('router.index');
+    Route::get('/router/create', [RouterController::class, 'create'])->name('router.create');
 });
 
 require __DIR__.'/auth.php';
