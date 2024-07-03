@@ -22,7 +22,10 @@ class PackageController extends Controller
     public function store()
     {
 
-        return view('backoffice.package.create');
+
+        flash()->success('Your account has been re-activated.');
+
+        return redirect()->route('package.index');
     }
 
 

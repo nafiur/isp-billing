@@ -20,7 +20,7 @@ Route::middleware('auth')->group(function () {
 Route::middleware('auth')->group(function () {
     Route::get('/package', [PackageController::class, 'index'])->name('package.index');
     Route::get('/package/create', [PackageController::class, 'create'])->name('package.create');
-    Route::post('/package', [PackageController::class, 'store'])->name('package.store');
+    Route::post('/package/store', [PackageController::class, 'store'])->name('package.store');
 });
 
 require __DIR__.'/auth.php';
