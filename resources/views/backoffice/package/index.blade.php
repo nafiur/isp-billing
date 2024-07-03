@@ -7,7 +7,7 @@
     <div class="content container-fluid">
         <div class="page-header">
             <div class="content-page-header">
-                <h5>Customers</h5>
+                <h5>Package</h5>
                 <div class="list-btn">
                     <ul class="filter-list">
                         <li>
@@ -31,9 +31,7 @@
                         <li>
                             <a class="btn-filters" href="javascript:void(0);" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Print"><span><i class="fe fe-printer"></i></span> </a>
                         </li>
-                        <li>
-                            <a class="btn btn-import" href="javascript:void(0);"><span><i class="fe fe-check-square me-2"></i>Import Customer</span></a>
-                        </li>
+
                         <li>
                             <a class="btn btn-primary" href="{{ route('package.create') }}"><i class="fa fa-plus-circle me-2" aria-hidden="true"></i>Add Customer</a>
                         </li>
@@ -42,44 +40,18 @@
             </div>
         </div>
 
-
-        <div id="filter_inputs" class="card filter-card">
-            <div class="card-body pb-0">
-                <div class="row">
-                    <div class="col-sm-6 col-md-3">
-                        <div class="input-block mb-3">
-                            <label>Name</label>
-                            <input type="text" class="form-control">
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-3">
-                        <div class="input-block mb-3">
-                            <label>Email</label>
-                            <input type="text" class="form-control">
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-3">
-                        <div class="input-block mb-3">
-                            <label>Phone</label>
-                            <input type="text" class="form-control">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <div class="row">
             <div class="col-sm-12">
                 <div class="card-table">
-                    <div class="card-body">
+                    <div class="card-body h-300">
                         <div class="table-responsive">
                             <table class="table table-center table-hover datatable">
                                 <thead class="thead-light">
                                     <tr>
                                         <th>#</th>
+                                        <th>Router</th>
                                         <th>Name</th>
-                                        <th>Phone</th>
-                                        <th>Balance </th>
+                                        <th>Price </th>
                                         <th>Total Invoice </th>
                                         <th>Created</th>
                                         <th>Status</th>
@@ -92,7 +64,7 @@
                                         <td>
                                             <h2 class="table-avatar">
                                                 <a href="profile.html" class="avatar avatar-md me-2"><img class="avatar-img rounded-circle" src="{{ asset('backoffice/assets/img/profiles/avatar-14.jpg') }}" alt="User Image"></a>
-                                                <a href="profile.html">John Smith <span><span class="__cf_email__" data-cfemail="1a707572745a7f627b776a767f34797577">[email&#160;protected]</span></span></a>
+                                                <a href="profile.html">John Smith <span><span class="__cf_email__"></span></span></span></a>
                                             </h2>
                                         </td>
                                         <td>+1 989-438-3131</td>
@@ -101,208 +73,6 @@
                                         <td>19 Dec 2023, 06:12 PM</td>
                                         <td><span class="badge bg-success-light">Active</span></td>
                                         <td class="d-flex align-items-center">
-                                            <a href="add-invoice.html" class="btn btn-greys me-2"><i class="fa fa-plus-circle me-1"></i> Invoice</a>
-                                            <a href="customers-ledger.html" class="btn btn-greys me-2"><i class="fa-regular fa-eye me-1"></i> Ledger</a>
-                                            <div class="dropdown dropdown-action">
-                                                <a href="#" class=" btn-action-icon " data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-v"></i></a>
-                                                <div class="dropdown-menu dropdown-menu-end">
-                                                    <ul>
-                                                        <li>
-                                                            <a class="dropdown-item" href="edit-customer.html"><i class="far fa-edit me-2"></i>Edit</a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#delete_modal"><i class="far fa-trash-alt me-2"></i>Delete</a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="dropdown-item" href="customer-details.html"><i class="far fa-eye me-2"></i>View</a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="dropdown-item" href="active-customers.html"><i class="fa-solid fa-power-off me-2"></i>Activate</a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="dropdown-item" href="deactive-customers.html"><i class="far fa-bell-slash me-2"></i>Deactivate</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>
-                                            <h2 class="table-avatar">
-                                                <a href="profile.html" class="avatar avatar-md me-2"><img class="avatar-img rounded-circle" src="{{ asset('backoffice/assets/img/profiles/avatar-15.jpg')}}" alt="User Image"></a>
-                                                <a href="profile.html">Johnny Charles <span><span class="__cf_email__" data-cfemail="cba1a4a3a5a5b28baeb3aaa6bba7aee5a8a4a6">[email&#160;protected]</span></span></a>
-                                            </h2>
-                                        </td>
-                                        <td>+1 843-443-3282</td>
-                                        <td>$1,862</td>
-                                        <td>1</td>
-                                        <td>15 Dec 2023, 04:35 PM</td>
-                                        <td><span class="badge bg-success-light">Active</span></td>
-                                        <td class="d-flex align-items-center">
-                                            <a href="add-invoice.html" class="btn btn-greys me-2"><i class="fa fa-plus-circle me-1"></i> Invoice</a>
-                                            <a href="customers-ledger.html" class="btn btn-greys me-2"><i class="fa-regular fa-eye me-1"></i> Ledger</a>
-                                            <div class="dropdown dropdown-action">
-                                                <a href="#" class=" btn-action-icon " data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-v"></i></a>
-                                                <div class="dropdown-menu dropdown-menu-end">
-                                                    <ul>
-                                                        <li>
-                                                            <a class="dropdown-item" href="edit-customer.html"><i class="far fa-edit me-2"></i>Edit</a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#delete_modal"><i class="far fa-trash-alt me-2"></i>Delete</a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="dropdown-item" href="customer-details.html"><i class="far fa-eye me-2"></i>View</a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="dropdown-item" href="active-customers.html"><i class="fa-solid fa-power-off me-2"></i>Activate</a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="dropdown-item" href="deactive-customers.html"><i class="far fa-bell-slash me-2"></i>Deactivate</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>
-                                            <h2 class="table-avatar">
-                                                <a href="profile.html" class="avatar avatar-md me-2"><img class="avatar-img rounded-circle" src="{{ asset('backoffice/assets/img/profiles/avatar-16.jpg') }}" alt="User Image"></a>
-                                                <a href="profile.html">Robert George <span><span class="__cf_email__"></span></span></span></a>
-                                            </h2>
-                                        </td>
-                                        <td>+1 917-409-0861</td>
-                                        <td>$2,789</td>
-                                        <td>3</td>
-                                        <td>04 Dec 2023, 12:38 PM</td>
-                                        <td><span class="badge  bg-danger-light">Deactive</span></td>
-                                        <td class="d-flex align-items-center">
-                                            <a href="add-invoice.html" class="btn btn-greys me-2"><i class="fa fa-plus-circle me-1"></i> Invoice</a>
-                                            <a href="customers-ledger.html" class="btn btn-greys me-2"><i class="fa-regular fa-eye me-1"></i> Ledger</a>
-                                            <div class="dropdown dropdown-action">
-                                                <a href="#" class=" btn-action-icon " data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-v"></i></a>
-                                                <div class="dropdown-menu dropdown-menu-end">
-                                                    <ul>
-                                                        <li>
-                                                            <a class="dropdown-item" href="edit-customer.html"><i class="far fa-edit me-2"></i>Edit</a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#delete_modal"><i class="far fa-trash-alt me-2"></i>Delete</a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="dropdown-item" href="customer-details.html"><i class="far fa-eye me-2"></i>View</a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="dropdown-item" href="active-customers.html"><i class="fa-solid fa-power-off me-2"></i>Activate</a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="dropdown-item" href="deactive-customers.html"><i class="far fa-bell-slash me-2"></i>Deactivate</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>4</td>
-                                        <td>
-                                            <h2 class="table-avatar">
-                                                <a href="profile.html" class="avatar avatar-md me-2"><img class="avatar-img rounded-circle" src="{{ asset('backoffice/assets/img/profiles/avatar-17.jpg') }}" alt="User Image"></a>
-                                                <a href="profile.html">Sharonda Letha <span><span class="__cf_email__" data-cfemail="4b38232a3924250b2e332a263b272e65282426">[email&#160;protected]</span></span></a>
-                                            </h2>
-                                        </td>
-                                        <td>+1 956-623-2880</td>
-                                        <td>$7,923</td>
-                                        <td>6</td>
-                                        <td>28 Nov 2023, 03:25 PM</td>
-                                        <td><span class="badge  bg-success-light">Active</span></td>
-                                        <td class="d-flex align-items-center">
-                                            <a href="add-invoice.html" class="btn btn-greys me-2"><i class="fa fa-plus-circle me-1"></i> Invoice</a>
-                                            <a href="customers-ledger.html" class="btn btn-greys me-2"><i class="fa-regular fa-eye me-1"></i> Ledger</a>
-                                            <div class="dropdown dropdown-action">
-                                                <a href="#" class=" btn-action-icon " data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-v"></i></a>
-                                                <div class="dropdown-menu dropdown-menu-end">
-                                                    <ul>
-                                                        <li>
-                                                            <a class="dropdown-item" href="edit-customer.html"><i class="far fa-edit me-2"></i>Edit</a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#delete_modal"><i class="far fa-trash-alt me-2"></i>Delete</a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="dropdown-item" href="customer-details.html"><i class="far fa-eye me-2"></i>View</a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="dropdown-item" href="active-customers.html"><i class="fa-solid fa-power-off me-2"></i>Activate</a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="dropdown-item" href="deactive-customers.html"><i class="far fa-bell-slash me-2"></i>Deactivate</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>5</td>
-                                        <td>
-                                            <h2 class="table-avatar">
-                                                <a href="profile.html" class="avatar avatar-md me-2"><img class="avatar-img rounded-circle" src="{{ asset('backoffice/assets/img/profiles/avatar-18.jpg') }}" alt="User Image"></a>
-                                                <a href="profile.html">Pricilla Maureen <span><span class="__cf_email__" data-cfemail="ff8f8d969c9693939ebf9a879e928f939ad19c9092">[email&#160;protected]</span></span></a>
-                                            </h2>
-                                        </td>
-                                        <td>+1 707-439-1732</td>
-                                        <td>$2,763</td>
-                                        <td>4</td>
-                                        <td>20 Nov 2022, 02:47 PM</td>
-                                        <td><span class="badge bg-danger-light">Deactive</span></td>
-                                        <td class="d-flex align-items-center">
-                                            <a href="add-invoice.html" class="btn btn-greys me-2"><i class="fa fa-plus-circle me-1"></i> Invoice</a>
-                                            <a href="customers-ledger.html" class="btn btn-greys me-2"><i class="fa-regular fa-eye me-1"></i> Ledger</a>
-                                            <div class="dropdown dropdown-action">
-                                                <a href="#" class=" btn-action-icon " data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-v"></i></a>
-                                                <div class="dropdown-menu dropdown-menu-end">
-                                                    <ul>
-                                                        <li>
-                                                            <a class="dropdown-item" href="edit-customer.html"><i class="far fa-edit me-2"></i>Edit</a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#delete_modal"><i class="far fa-trash-alt me-2"></i>Delete</a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="dropdown-item" href="customer-details.html"><i class="far fa-eye me-2"></i>View</a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="dropdown-item" href="active-customers.html"><i class="fa-solid fa-power-off me-2"></i>Activate</a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="dropdown-item" href="deactive-customers.html"><i class="far fa-bell-slash me-2"></i>Deactivate</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>6</td>
-                                        <td>
-                                            <h2 class="table-avatar">
-                                                <a href="profile.html" class="avatar avatar-md me-2"><img class="avatar-img rounded-circle" src="{{ asset('backoffice/assets/img/profiles/avatar-19.jpg') }}" alt="User Image"></a>
-                                                <a href="profile.html">Randall Hollis <span><span class="__cf_email__" data-cfemail="394b58575d585555795c41585449555c175a5654">[email&#160;protected]</span></span></a>
-                                            </h2>
-                                        </td>
-                                        <td>+1 559-741-9672</td>
-                                        <td>$4,642</td>
-                                        <td>1</td>
-                                        <td>15 Nov 2022, 10:42 AM</td>
-                                        <td><span class="badge  bg-success-light">Active</span></td>
-                                        <td class="d-flex align-items-center">
-                                            <a href="add-invoice.html" class="btn btn-greys me-2"><i class="fa fa-plus-circle me-1"></i> Invoice</a>
-                                            <a href="customers-ledger.html" class="btn btn-greys me-2"><i class="fa-regular fa-eye me-1"></i> Ledger</a>
                                             <div class="dropdown dropdown-action">
                                                 <a href="#" class=" btn-action-icon " data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-ellipsis-v"></i></a>
                                                 <div class="dropdown-menu dropdown-menu-end">

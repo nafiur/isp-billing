@@ -18,10 +18,17 @@
         </li> --}}
 
         <li class="menu-title"><span>Package</span></li>
-        <li class="{{ request()->routeIs('package.index') ? 'active' : '' }}">
+        <li class="{{ request()->routeIs('package*') ? 'active' : '' }}">
             <a href="{{ route('package.index') }}">
                 <i class="fe fe-home"></i>
                 <span> Package</span>
+            </a>
+        </li>
+        <li class="menu-title"><span>Router</span></li>
+        <li class="{{ request()->routeIs('router*') ? 'active' : '' }}">
+            <a href="{{ route('router.index') }}">
+                <i class="fe fe-home"></i>
+                <span> Router</span>
             </a>
         </li>
         <li class="menu-title"><span>Router Settings</span></li>
