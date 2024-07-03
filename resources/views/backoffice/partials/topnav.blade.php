@@ -110,8 +110,8 @@
                 <span class="animate-circle"></span>
             </span>
             <span class="user-content">
-                <span class="user-details">Admin</span>
-                <span class="user-name">John Smith</span>
+                <span class="user-details">{{ Auth::user()->role }}</span>
+                <span class="user-name">{{ Auth::user()->name }}</span>
             </span>
         </a>
         <div class="dropdown-menu menu-drop-user">
@@ -129,7 +129,10 @@
                 <div class="subscription-logout">
                     <ul>
                         <li class="pb-0">
-                            <a class="dropdown-item" href="login.html">Log Out</a>
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
+                                <a class="dropdown-item" href="{{ route('logout') }}">Log Out</a>
+                            </form>
                         </li>
                     </ul>
                 </div>
