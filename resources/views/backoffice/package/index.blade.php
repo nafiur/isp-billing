@@ -33,7 +33,7 @@
                         </li>
 
                         <li>
-                            <a class="btn btn-primary" href="{{ route('package.create') }}"><i class="fa fa-plus-circle me-2" aria-hidden="true"></i>Add Customer</a>
+                            <a class="btn btn-primary" href="{{ route('package.create') }}"><i class="fa fa-plus-circle me-2" aria-hidden="true"></i>Add Package</a>
                         </li>
                     </ul>
                 </div>

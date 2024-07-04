@@ -25,6 +25,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/router', [RouterController::class, 'index'])->name('router.index');
     Route::get('/router/create', [RouterController::class, 'create'])->name('router.create');
+    Route::post('/router/', [RouterController::class, 'store'])->name('router.store');
 });
 
 require __DIR__.'/auth.php';
