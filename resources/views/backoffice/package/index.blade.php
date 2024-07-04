@@ -50,27 +50,24 @@
                                     <tr>
                                         <th>#</th>
                                         <th>Router</th>
-                                        <th>Name</th>
-                                        <th>Price </th>
-                                        <th>Total Invoice </th>
+                                        <th>Package</th>
+                                        <th>Price</th>
                                         <th>Created</th>
                                         <th>Status</th>
                                         <th class="no-sort">Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach ($package as $key => $pack)
                                     <tr>
-                                        <td>1</td>
+                                        <td>{{ $key+1 }}</td>
                                         <td>
-                                            <h2 class="table-avatar">
-                                                <a href="profile.html" class="avatar avatar-md me-2"><img class="avatar-img rounded-circle" src="{{ asset('backoffice/assets/img/profiles/avatar-14.jpg') }}" alt="User Image"></a>
-                                                <a href="profile.html">John Smith <span><span class="__cf_email__"></span></span></span></a>
+                                            <h2 class="table-avatar"><a href="profile.html">{{ $pack->router->name ??'' }} <span><span class="__cf_email__"></span></span></span></a>
                                             </h2>
                                         </td>
-                                        <td>+1 989-438-3131</td>
-                                        <td>$4,220</td>
-                                        <td>2</td>
-                                        <td>19 Dec 2023, 06:12 PM</td>
+                                        <td>{{ $pack->name ??'' }}</td>
+                                        <td>{{ $pack->price ??'' }}</td>
+                                        <td>{{ $pack->created_at ? $pack->created_at->format('d-m-Y') : '' }}</td>
                                         <td><span class="badge bg-success-light">Active</span></td>
                                         <td class="d-flex align-items-center">
                                             <div class="dropdown dropdown-action">
@@ -78,25 +75,25 @@
                                                 <div class="dropdown-menu dropdown-menu-end">
                                                     <ul>
                                                         <li>
-                                                            <a class="dropdown-item" href="edit-customer.html"><i class="far fa-edit me-2"></i>Edit</a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#delete_modal"><i class="far fa-trash-alt me-2"></i>Delete</a>
+                                                            {{-- <a class="dropdown-item" href="{{ route('router.edit', $pack->id) }}"><i class="far fa-edit me-2"></i>Edit</a> --}}
+                                                            <a class="dropdown-item" href="{{ route('package.edit', $pack->id) }}">
+                                                                <i class="far fa-edit me-2"></i>Edit
+                                                            </a>
+
                                                         </li>
                                                         <li>
                                                             <a class="dropdown-item" href="customer-details.html"><i class="far fa-eye me-2"></i>View</a>
                                                         </li>
                                                         <li>
-                                                            <a class="dropdown-item" href="active-customers.html"><i class="fa-solid fa-power-off me-2"></i>Activate</a>
+                                                            <a class="dropdown-item" href="{{ route('package.destroy', $pack->id) }}"><i class="fa-solid fa-power-off me-2"></i>Activate</a>
                                                         </li>
-                                                        <li>
-                                                            <a class="dropdown-item" href="deactive-customers.html"><i class="far fa-bell-slash me-2"></i>Deactivate</a>
-                                                        </li>
+
                                                     </ul>
                                                 </div>
                                             </div>
                                         </td>
                                     </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>

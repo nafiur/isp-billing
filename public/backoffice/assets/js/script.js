@@ -598,7 +598,7 @@
     });
     if ($("#mobile_code").length > 0) {
         $("#mobile_code").intlTelInput({
-            initialCountry: "in",
+            initialCountry: "bd",
             separateDialCode: true,
         });
     }

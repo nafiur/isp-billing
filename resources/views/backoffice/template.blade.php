@@ -621,25 +621,17 @@
 
     </div>
 
-
-
-
-
     <script src="{{ asset('backoffice/assets/js/jquery-3.7.1.min.js') }}" type="text/javascript"></script>
-
     <script src="{{ asset('backoffice/assets/js/bootstrap.bundle.min.js') }}" type="text/javascript"></script>
     <script src="{{ asset('backoffice/assets/plugins/select2/js/select2.min.js') }}" type="text/javascript"></script>
     <script src="{{ asset('backoffice/assets/plugins/intlTelInput/js/intlTelInput-jquery.min.js') }}" type="text/javascript"></script>
     <script src="{{ asset('backoffice/assets/js/feather.min.js') }}" type="text/javascript"></script>
-
+    <script src="{{ asset('backoffice/assets/plugins/moment/moment.min.jss') }}" type="text/javascript"></script>
+    <script src="{{ asset('backoffice/assets/js/bootstrap-datetimepicker.min.js') }}" type="text/javascript"></script>
     <script src="{{ asset('backoffice/assets/plugins/slimscroll/jquery.slimscroll.min.js') }}" type="text/javascript"></script>
-
     <script src="{{ asset('backoffice/assets/plugins/apexchart/apexcharts.min.js') }}" type="text/javascript"></script>
     <script src="{{ asset('backoffice/assets/plugins/apexchart/chart-data.js') }}" type="text/javascript"></script>
-
-    {{-- <script src="{{ asset('backoffice/assets/js/theme-settings.js') }}" type="text/javascript"></script> --}}
     <script src="{{ asset('backoffice/assets/js/greedynav.js') }}" type="text/javascript"></script>
-
     <script src="{{ asset('backoffice/assets/js/script.js') }}" type="text/javascript"></script>
 </body>
 </html>

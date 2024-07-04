@@ -31,27 +31,12 @@
                 <span> Router</span>
             </a>
         </li>
-        <li class="menu-title"><span>Router Settings</span></li>
-        <li class="submenu">
-            <a href="#" class=""><i class="fe fe-user"></i> <span> Router</span> <span class="menu-arrow"></span></a>
-            <ul>
-                <li><a href="dashboard.html">Dashboard</a></li>
-                <li><a href="companies.html">Companies</a></li>
-                <li><a href="subscription.html">Subscription</a></li>
-                <li><a href="packages.html">Packages</a></li>
-                <li><a href="domain.html">Domain</a></li>
-                <li><a href="purchase-transaction.html">Purchase Transaction</a></li>
-            </ul>
-        </li>
         <li class="menu-title"><span>Customers</span></li>
-        <li>
-            <a href="customers.html"><i class="fe fe-users"></i> <span>Customers</span></a>
-        </li>
-        <li>
-            <a href="customer-details.html"><i class="fe fe-file"></i> <span>Customer Details</span></a>
-        </li>
-        <li>
-            <a href="vendors.html"><i class="fe fe-user"></i> <span>Vendors</span></a>
+        <li class="{{ request()->routeIs('customer*') ? 'active' : '' }}">
+            <a href="{{ route('customer.index') }}">
+                <i class="fe fe-home"></i>
+                <span> Customers</span>
+            </a>
         </li>
 
 
