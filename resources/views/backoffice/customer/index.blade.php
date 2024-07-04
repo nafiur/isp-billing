@@ -65,8 +65,8 @@
                                             <h2 class="table-avatar"><a href="profile.html">{{ $list->name ??'' }} <span><span class="__cf_email__"></span></span></span></a>
                                             </h2>
                                         </td>
-                                        <td>{{ $list->package->name ??'' }}</td>
-                                        <td>{{ $list->price ??'' }}</td>
+                                        <td>{{ $list->detail->package_name ??'' }}</td>
+                                        <td>{{ $list->detail->package_price ??'' }}</td>
                                         <td>{{ $list->created_at ? $list->created_at->format('d-m-Y') : '' }}</td>
                                         <td><span class="badge bg-success-light">Active</span></td>
                                         <td class="d-flex align-items-center">

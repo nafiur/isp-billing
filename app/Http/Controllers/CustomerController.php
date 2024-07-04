@@ -66,6 +66,7 @@ class CustomerController extends Controller
 
         $package = Package::where("id", $request->package_name)->firstOrFail();
         $router = Router::where("id", $request->router_name)->firstOrFail();
+
         $randomNumber = rand(1000000, 9999999);
 
         try {
@@ -82,6 +83,9 @@ class CustomerController extends Controller
             $query->equal("profile", $package->name);
 
             $client->query($query)->read();
+
+            flash()->addSuccess("Customer Added Successfully.");
+
         } catch (\Exception $e) {
             return back()->with("error", __("Mikrotik connection fails"));
         }
@@ -99,7 +103,7 @@ class CustomerController extends Controller
         $details->address = $request->address;
         $details->dob = $request->dob;
         $details->pin = $request->pin;
-        $details->router_password = $user->user_id;
+        $details->router_password = $randomNumber;
         $details->package_name = $package->name;
         $details->router_name = $router->name;
         $details->package_price = $package->price;
@@ -117,7 +121,7 @@ class CustomerController extends Controller
         $billing->user_id = $user->id;
         $billing->save();
 
-        return redirect("users")->with("success", __("User added successfully"));
+        return redirect()->route('customer.index');
     }
 
 }
