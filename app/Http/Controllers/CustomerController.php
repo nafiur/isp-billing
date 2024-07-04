@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use RouterOS\Query;
 use App\Models\User;
 use RouterOS\Client;
@@ -10,6 +11,7 @@ use App\Models\Router;
 use App\Models\Billing;
 use App\Models\Package;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class CustomerController extends Controller
 {
@@ -31,38 +33,40 @@ class CustomerController extends Controller
 
     public function store(Request $request)
     {
-        $validated = $request->validate([
-            "name" => "required|string|max:255",
-            "email" => "required|email|unique:users",
-            "password" => "required|min:6|confirmed",
-            "address" => "required|string",
-            "phone" => "required|unique:users|regex:/^[0-9]{10,15}$/",
-            "dob" => "required|date",
-            "package_name" => "required|string|max:255",
-            "router_password" => "required|string|min:6",
-            "router_name" => "required",
-        ], [
-            'name.required' => 'Please enter your name',
-            'email.required' => 'Please enter your email address',
-            'email.email' => 'Please enter a valid email address',
-            'email.unique' => 'This email address is already in use',
-            'password.required' => 'Please enter your password',
-            'password.min' => 'Password must be at least 6 characters long',
-            'password.confirmed' => 'Password confirmation does not match',
-            'address.required' => 'Please enter your address',
-            'phone.required' => 'Please enter your phone number',
-            'phone.unique' => 'This phone number is already in use',
-            'phone.regex' => 'Please enter a valid phone number',
-            'dob.required' => 'Please enter your date of birth',
-            'dob.date' => 'Please enter a valid date',
-            'package_name.required' => 'Please enter the package name',
-            'router_password.required' => 'Please enter the router password',
-            'router_password.min' => 'Router password must be at least 6 characters long',
-            'router_name.required' => 'Please enter the router name',
-        ]);
+        // $validated = $request->validate([
+
+        //     "name" => "required|string|max:255",
+        //     "email" => "required|email|unique:users",
+        //     "password" => "required|min:6|confirmed",
+        //     "address" => "required|string",
+        //     "phone" => "required|unique:details|regex:/^[0-9]{10,15}$/",
+        //     "dob" => "required|date",
+        //     "package_name" => "required|string|max:255",
+        //     "router_password" => "required|string|min:6",
+        //     "router_name" => "required",
+        // ], [
+        //     'name.required' => 'Please enter your name',
+        //     'email.required' => 'Please enter your email address',
+        //     'email.email' => 'Please enter a valid email address',
+        //     'email.unique' => 'This email address is already in use',
+        //     'password.required' => 'Please enter your password',
+        //     'password.min' => 'Password must be at least 6 characters long',
+        //     'password.confirmed' => 'Password confirmation does not match',
+        //     'address.required' => 'Please enter your address',
+        //     'phone.required' => 'Please enter your phone number',
+        //     'phone.unique' => 'This phone number is already in use',
+        //     'phone.regex' => 'Please enter a valid phone number',
+        //     'dob.required' => 'Please enter your date of birth',
+        //     'dob.date' => 'Please enter a valid date',
+        //     'package_name.required' => 'Please enter the package name',
+        //     'router_password.required' => 'Please enter the router password',
+        //     'router_password.min' => 'Router password must be at least 6 characters long',
+        //     'router_name.required' => 'Please enter the router name',
+        // ]);
 
         $package = Package::where("id", $request->package_name)->firstOrFail();
         $router = Router::where("id", $request->router_name)->firstOrFail();
+        $randomNumber = rand(1000000, 9999999);
 
         try {
             $client = new Client([
@@ -73,7 +77,7 @@ class CustomerController extends Controller
 
             $query = new Query("/ppp/secret/add");
             $query->equal("name", $request->name);
-            $query->equal("password", $request->router_password);
+            $query->equal("password", $randomNumber);
             $query->equal("service", 'any');
             $query->equal("profile", $package->name);
 
@@ -85,8 +89,9 @@ class CustomerController extends Controller
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
+        $user->user_id = $randomNumber;
         $user->role = 'user';
-        $user->password = Hash::make($request->password);
+        $user->password = Hash::make($user->user_id);
         $user->save();
 
         $details = new Detail();
@@ -94,7 +99,7 @@ class CustomerController extends Controller
         $details->address = $request->address;
         $details->dob = $request->dob;
         $details->pin = $request->pin;
-        $details->router_password = $request->router_password;
+        $details->router_password = $user->user_id;
         $details->package_name = $package->name;
         $details->router_name = $router->name;
         $details->package_price = $package->price;

@@ -11,10 +11,23 @@ class Package extends Model
 {
     use HasFactory;
 
-    protected $guarder = [];
+    protected $guarded = [];
 
     public function router()
     {
         return $this->belongsTo(Router::class);
+    }
+
+
+    public function generateRandomNumber()
+    {
+        try {
+            $number = random_int(100000, 999999);
+        } catch (\Exception $e) {
+        }
+        if (self::where('invoice', $number)->exists()) {
+            return $this->generateRandomNumber();
+        }
+        return $number;
     }
 }

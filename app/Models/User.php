@@ -48,7 +48,25 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+    public function isAdmin()
+    {
+        return $this->role == 'admin';
+    }
 
+    public function isUser()
+    {
+        return $this->role == 'user';
+    }
+
+    public function due_amount($id)
+    {
+        $user = self::where('id', $id)->firstOrFail();
+
+        $bill = Billing::where('user_id', $user->id)->sum('package_price');
+        $pay = Payment::where('user_id', $user->id)->sum('package_price');
+
+        return $bill - $pay;
+    }
 
     public function detail()
     {

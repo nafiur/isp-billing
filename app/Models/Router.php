@@ -10,10 +10,12 @@ class Router extends Model
 {
     use HasFactory;
 
-    protected $guarder = [];
+    protected $guarded = [];
 
     public function packages()
     {
         return $this->hasMany(Package::class);
     }
+
+
 }
